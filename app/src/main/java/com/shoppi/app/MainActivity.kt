@@ -24,16 +24,19 @@ class MainActivity : AppCompatActivity() {
             webView.settings.javaScriptEnabled = true // 자바스크립트 허용
         }
 
-        webView.addJavascriptInterface(WebAppInterface(this), "PilleyeBridge")
+        webView.addJavascriptInterface(WebAppInterface(this), "Pilleye")
 
-        webView.loadUrl("https://medility-fe-private-mobile.vercel.app")
-
+        webView.loadUrl("https://dev.mobile.piileye.io?member_idx=12345&region=kr")
     }
 
     class WebAppInterface(private val mContext: Context){
         @JavascriptInterface
-
         fun showToast(toast: String){
+            Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show()
+        }
+
+        @JavascriptInterface
+        fun nativeTabChange(toast: String){
             Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show()
         }
     }
@@ -53,6 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
+
 
 
 
