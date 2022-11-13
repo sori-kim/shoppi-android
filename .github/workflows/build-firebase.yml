@@ -29,7 +29,7 @@ jobs:
     - name: build debug 
       run: ./gradlew assembleDebug
     - name: upload debug artifact to Firebase App Distribution
-      run: firebase appdistribution:distribute app/build/outputs/bundle/debug/app-debug.apk --token ${{secrets.FIREBASE_TOKEN}} --app ${{secrets.FIREBASE_APP_ID}} --groups "trusted-testers" --release-notes "Test server"
+      run: firebase appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk --token ${{secrets.FIREBASE_TOKEN}} --app ${{secrets.FIREBASE_APP_ID}} --groups "trusted-testers" --release-notes "Test server"
 
     - name: action-slack
       uses: 8398a7/action-slack@v3.8.0
