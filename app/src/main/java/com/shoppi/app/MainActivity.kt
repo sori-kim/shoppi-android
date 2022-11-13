@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         webView.addJavascriptInterface(WebAppInterface(this), "Pilleye")
 
         //pilleye 웹뷰
-        webView.loadUrl("https://dev.mobile.piileye.io?member_idx=12345&region=kr")
+        webView.loadUrl("https://dev.mobile.piileye.io?member_idx=12345&region=en")
     }
 
     class WebAppInterface(private val mContext: Context){
